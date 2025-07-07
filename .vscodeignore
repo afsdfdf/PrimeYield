@@ -1,0 +1,7 @@
+# Exclude everything
+*
+*/**
+
+# Include specific files
+!.vscode/**
+!css_custom_data.json 

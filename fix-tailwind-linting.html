@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix Tailwind CSS Linting Issues</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      color: #0891b2;
+      border-bottom: 2px solid #0891b2;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #0891b2;
+      margin-top: 30px;
+    }
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .step {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .note {
+      background-color: #e6f7ff;
+      border-left: 4px solid #1890ff;
+      padding: 10px 15px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fix Tailwind CSS Linting Issues in VS Code</h1>
+  
+  <p>Follow these steps to resolve CSS linting errors related to Tailwind directives like <code>@tailwind</code> and <code>@apply</code>.</p>
+
+  <div class="step">
+    <h2>Step 1: Install Required VS Code Extensions</h2>
+    <p>Open VS Code and install these extensions:</p>
+    <ul>
+      <li><strong>Tailwind CSS IntelliSense</strong> (bradlc.vscode-tailwindcss)</li>
+      <li><strong>PostCSS Language Support</strong> (csstools.postcss)</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2>Step 2: Disable CSS Validation</h2>
+    <p>VS Code's built-in CSS validator doesn't recognize Tailwind directives. Create or update <code>.vscode/settings.json</code> with:</p>
+    <pre>{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}</pre>
+  </div>
+
+  <div class="step">
+    <h2>Step 3: Reload VS Code</h2>
+    <p>After making these changes, reload VS Code:</p>
+    <ol>
+      <li>Press <code>Ctrl+Shift+P</code> (Windows/Linux) or <code>Cmd+Shift+P</code> (Mac)</li>
+      <li>Type "Reload Window" and press Enter</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    <p><strong>Note:</strong> The errors you're seeing are just linting errors in the editor. They don't affect how your code runs or builds. Tailwind CSS will still work correctly even with these errors showing in VS Code.</p>
+  </div>
+
+  <div class="step">
+    <h2>Alternative: Use Comments in CSS</h2>
+    <p>If you still see errors, you can add comments in your CSS file to indicate that these are valid directives:</p>
+    <pre>/* These are Tailwind directives - IDE might show errors but they are valid */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* These are Tailwind @apply directives - IDE might show errors but they are valid */
+@layer base {
+  * {
+    @apply border-border;
+  }
+}</pre>
+  </div>
+
+  <p>After following these steps, the CSS linting errors for Tailwind directives should be resolved or at least clearly marked as false positives.</p>
+</body>
+</html> 
