@@ -15,11 +15,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/primeyield-logo.svg', type: 'image/svg+xml' }
+      { url: '/primeyield-logo.svg', type: 'image/svg+xml' },
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' }
     ],
-    apple: '/logo.png'
-  }
+    apple: [
+      { url: '/primeyield-logo.svg', type: 'image/svg+xml' },
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico'
+  },
+  manifest: '/manifest.json'
 }
 
 export default function RootLayout({
