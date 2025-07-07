@@ -13,8 +13,12 @@ export const metadata: Metadata = {
   description:
     "Institutional-grade real-world asset tokenization bridging TradFi and DeFi through advanced blockchain infrastructure",
   icons: {
-    icon: '/primeyield-logo.svg',
-    apple: '/primeyield-logo.svg'
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/primeyield-logo.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/logo.png'
   }
 }
 
